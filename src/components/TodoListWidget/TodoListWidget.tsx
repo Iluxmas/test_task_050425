@@ -13,7 +13,7 @@ export const TodoListWidget: React.FC = () => {
   return (
     <main className={s.main}>
       <h1 className={s.heading}>Yet another todo list</h1>
-      <AddTodoInput />
+      <AddTodoInput onAdd={context.addTodo} />
       <TodoList todos={context.todos} />
     </main>
   );

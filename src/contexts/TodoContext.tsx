@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import { ITodo } from '@/types/todos';
 
-interface TodoContextType {
+export interface TodoContextType {
   todos: ITodo[];
   addTodo: (text: string) => void;
   toggleTodo: (id: number) => void;
@@ -13,17 +13,15 @@ export const TodoContext = createContext<TodoContextType | undefined>(
   undefined,
 );
 
+function getInitialTodos() {
+  const fromLocalStorage = localStorage.getItem('todos');
+  return fromLocalStorage ? JSON.parse(fromLocalStorage) : [];
+}
+
 export const TodoProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [todos, setTodos] = useState<ITodo[]>([]);
-
-  useEffect(() => {
-    const storedTodos = JSON.parse(
-      localStorage.getItem('todos') || '[]',
-    ) as ITodo[];
-    setTodos(storedTodos);
-  }, []);
+  const [todos, setTodos] = useState<ITodo[]>(getInitialTodos());
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));

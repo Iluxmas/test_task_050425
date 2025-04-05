@@ -16,6 +16,7 @@
   border: none;
 }
 
-.addButton:hover {
-  opacity: 0.9;
+.addButton:disabled {
+  background-color: var(--gray-300);
+  cursor: default;
 }

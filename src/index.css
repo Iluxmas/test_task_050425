@@ -64,7 +64,7 @@ button {
   transition: var(--base-transition);
 }
 
-button:hover {
+button:hover:not(:disabled) {
   opacity: 0.8;
 }
 
