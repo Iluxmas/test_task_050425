@@ -39,7 +39,7 @@ export const TodoProvider: React.FC<{ children: ReactNode }> = ({
       text,
       done: false,
     };
-    setTodos((prevTodos) => [...prevTodos, newTodo]);
+    setTodos((prevTodos) => [newTodo, ...prevTodos]);
   };
 
   const toggleTodo = (id: number) => {

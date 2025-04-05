@@ -2,15 +2,18 @@
   display: flex;
   align-items: stretch;
   flex-wrap: nowrap;
-  padding: 4px;
-  background-color: var(--gray-100);
-  border-radius: var(--ui-border-radius-8);
+  padding: 4px 0;
 }
 
 .todoDragArea {
   display: flex;
   align-items: center;
   width: 40px;
+}
+
+.todoDragArea:hover {
+  cursor: grab;
+  opacity: 0.8;
 }
 
 .todoDragIcon {
@@ -23,12 +26,25 @@
 .todoContent {
   flex-grow: 1;
   display: flex;
-  padding: 4px;
+  padding: 4px 4px 4px 0;
+  background-color: var(--gray-100);
   border-radius: var(--ui-border-radius-8);
+  transition: var(--base-transition);
+}
+
+.todoDone {
+  text-decoration: line-through;
+  background-color: var(--secondary-green);
+}
+
+.todoContent:hover {
+  cursor: pointer;
+  z-index: 10;
 }
 
 .todoText {
   margin: 0;
+  padding: 0 8px;
   text-align: left;
 }
 

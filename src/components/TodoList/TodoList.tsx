@@ -5,7 +5,7 @@ import { TodoItem } from '../TodoItem';
 import s from './styles.module.css';
 
 export const TodoList: React.FC = () => {
-  const { todos, deleteTodo } = useContext(TodoContext);
+  const { todos, deleteTodo, toggleTodo } = useContext(TodoContext);
 
   if (!todos.length) {
     return <h2>Ваш список задач пуст</h2>;
@@ -14,7 +14,12 @@ export const TodoList: React.FC = () => {
   return (
     <ul className={s.list}>
       {todos.map((item) => (
-        <TodoItem todo={item} key={item.id} onDelete={deleteTodo} />
+        <TodoItem
+          todo={item}
+          key={item.id}
+          onDelete={deleteTodo}
+          onToggle={toggleTodo}
+        />
       ))}
     </ul>
   );
