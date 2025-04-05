@@ -65,12 +65,7 @@ button {
 }
 
 button:hover {
-  border-color: var(--primary);
-}
-
-button:focus,
-button:focus-visible {
-  outline: 1px auto var(--gray-990);
+  opacity: 0.8;
 }
 
 input {
@@ -88,7 +83,7 @@ input:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: var(--gray-100);
   }
   a:hover {
     color: #747bff;
