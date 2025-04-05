@@ -1,0 +1,17 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid var(--gray-700);
+  border-radius: var(--ui-border-radius-12);
+  background-color: var(--white);
+  min-height: 700px;
+}
+
+.heading {
+  margin: 0;
+  margin-bottom: 12px;
+}

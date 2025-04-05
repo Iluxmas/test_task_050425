@@ -1,0 +1,22 @@
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border-radius: var(--ui-border-radius-8);
+}
+
+.addButton {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+}
+
+.addButton:disabled {
+  background-color: var(--gray-300);
+  cursor: default;
+}
