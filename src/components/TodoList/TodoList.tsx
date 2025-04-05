@@ -1,14 +1,12 @@
-import React from 'react';
-import { ITodo } from '@/types/todos';
+import React, { useContext } from 'react';
+import { TodoContext } from '@/contexts/TodoContext';
 import { TodoItem } from '../TodoItem';
 
 import s from './styles.module.css';
 
-type Props = {
-  todos: ITodo[];
-};
+export const TodoList: React.FC = () => {
+  const { todos, deleteTodo } = useContext(TodoContext);
 
-export const TodoList: React.FC<Props> = ({ todos }) => {
   if (!todos.length) {
     return <h2>Ваш список задач пуст</h2>;
   }
@@ -16,7 +14,7 @@ export const TodoList: React.FC<Props> = ({ todos }) => {
   return (
     <ul className={s.list}>
       {todos.map((item) => (
-        <TodoItem todo={item} key={item.id} />
+        <TodoItem todo={item} key={item.id} onDelete={deleteTodo} />
       ))}
     </ul>
   );

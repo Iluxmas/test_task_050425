@@ -8,13 +8,13 @@ import s from './styles.module.css';
 export const TodoListWidget: React.FC = () => {
   const context = useContext(TodoContext);
 
-  if (!context) return null;
+  const { addTodo } = useContext(TodoContext);
 
   return (
     <main className={s.main}>
       <h1 className={s.heading}>Yet another todo list</h1>
-      <AddTodoInput onAdd={context.addTodo} />
-      <TodoList todos={context.todos} />
+      <AddTodoInput onAdd={addTodo} />
+      <TodoList />
     </main>
   );
 };

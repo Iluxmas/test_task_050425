@@ -9,9 +9,15 @@ export interface TodoContextType {
   changeTodoOrder: (fromIndex: number, toIndex: number) => void;
 }
 
-export const TodoContext = createContext<TodoContextType | undefined>(
-  undefined,
-);
+const defaultContextValue: TodoContextType = {
+  todos: [],
+  addTodo: () => {},
+  toggleTodo: () => {},
+  deleteTodo: () => {},
+  changeTodoOrder: () => {},
+};
+
+export const TodoContext = createContext<TodoContextType>(defaultContextValue);
 
 function getInitialTodos() {
   const fromLocalStorage = localStorage.getItem('todos');
