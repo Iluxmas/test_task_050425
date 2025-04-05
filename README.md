@@ -9,6 +9,8 @@
 - изменение порядка задач
 - тесты функционала
 
+[Деплой тут](https://iluxmas.github.io/test_task_050425/)
+
 ## Стэк
 
 React, Typescript, Vite, DndKit, Vitest
