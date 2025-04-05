@@ -27,10 +27,11 @@ export const AddTodoInput: React.FC<Props> = ({ onAdd }) => {
     <div className={s.inputWrapper}>
       <input
         className={s.input}
-        placeholder="добавьте задачу"
+        placeholder="Добавьте задачу"
         name="todo_input"
         type="text"
         value={value}
+        maxLength={56}
         onKeyDown={handleKeyDown}
         onChange={(e) => setValue(e.target.value)}
       />
