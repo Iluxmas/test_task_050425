@@ -1,13 +1,13 @@
 import React from 'react';
+import { AddTodoInput } from '../AddTodoInput';
 
 import s from './styles.module.css';
 
-type Props = {};
-
-export const TodoListWidget: React.FC<Props> = (props) => {
+export const TodoListWidget: React.FC = () => {
   return (
     <main className={s.main}>
       <h1 className={s.heading}>Yet another todo list</h1>
+      <AddTodoInput />
     </main>
   );
 };
