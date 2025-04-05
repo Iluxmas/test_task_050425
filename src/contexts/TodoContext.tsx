@@ -64,7 +64,13 @@ export const TodoProvider: React.FC<{ children: ReactNode }> = ({
 
   return (
     <TodoContext.Provider
-      value={{ todos, addTodo, toggleTodo, deleteTodo, changeTodoOrder }}
+      value={{
+        todos,
+        addTodo,
+        toggleTodo,
+        deleteTodo,
+        changeTodoOrder,
+      }}
     >
       {children}
     </TodoContext.Provider>

@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '@/contexts/TodoContext';
+import { withSortable } from '@/hocs/withSortable';
 import { TodoItem } from '../TodoItem';
 
 import s from './styles.module.css';
 
-export const TodoList: React.FC = () => {
+export const TodoListBase: React.FC = () => {
   const { todos, deleteTodo, toggleTodo } = useContext(TodoContext);
 
   if (!todos.length) {
@@ -24,3 +25,5 @@ export const TodoList: React.FC = () => {
     </ul>
   );
 };
+
+export const TodoList = withSortable(TodoListBase);
