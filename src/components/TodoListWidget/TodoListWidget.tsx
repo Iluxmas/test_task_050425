@@ -7,7 +7,7 @@ type Props = {};
 export const TodoListWidget: React.FC<Props> = (props) => {
   return (
     <main className={s.main}>
-      <h1>Yet another todo list</h1>
+      <h1 className={s.heading}>Yet another todo list</h1>
     </main>
   );
 };
